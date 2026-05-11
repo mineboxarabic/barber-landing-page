@@ -18,7 +18,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "ignoreDeprecations": "5.0",
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@sections/*": ["sections/*"],
+      "@assets/*": ["assets/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"]
+    }
   },
   "include": [
     "src"
