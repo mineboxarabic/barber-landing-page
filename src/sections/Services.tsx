@@ -10,43 +10,54 @@ import {
   KidIcon,
 } from 'components/ServiceIcons';
 
+const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
+
 const services = [
   {
     name: 'Classic Cut',
-    desc: 'Timeless scissor cut with a clean finish',
+    desc: 'Consultation, tailored scissor or clipper cut, wash, and style.',
     price: 35,
     Icon: ScissorsIcon,
   },
-  { name: 'Fade', desc: 'Skin to length — tight, seamless, sharp', price: 40, Icon: FadeIcon },
+  {
+    name: 'Skin Fade',
+    desc: 'Tight blend, clean neckline, razor detail, and matte finish.',
+    price: 40,
+    Icon: FadeIcon,
+  },
   {
     name: 'Hot Towel Shave',
-    desc: 'Full straight-razor shave with hot towel prep',
+    desc: 'Steam towel prep, straight-razor shave, cold towel, and balm.',
     price: 45,
     Icon: RazorIcon,
   },
   {
     name: 'Beard Trim',
-    desc: 'Shape, line, and condition your beard',
+    desc: 'Shape, line-up, condition, and razor-clean cheek detail.',
     price: 25,
     Icon: BeardIcon,
   },
   {
     name: 'Full Groom',
-    desc: 'Cut + beard trim + hot towel finish',
+    desc: 'Cut, beard trim, hot towel finish, and styling consultation.',
     price: 70,
     Icon: ComboIcon,
   },
-  { name: "Kids' Cut", desc: 'For the young ones, 12 and under', price: 25, Icon: KidIcon },
+  {
+    name: "Kids' Cut",
+    desc: 'Patient, sharp cuts for younger clients ages 12 and under.',
+    price: 25,
+    Icon: KidIcon,
+  },
 ];
 
 export default function Services() {
   return (
     <SectionWrapper id="services" dark={true} className="py-28 md:py-36 relative">
-      {/* Section number */}
       <FadeUp className="absolute top-10 left-8 md:left-14">
         <div className="flex flex-col items-start gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray">
-            03 — Services
+            03 - Services
           </span>
           <div className="w-10 h-px bg-brand-gray/40" />
         </div>
@@ -58,7 +69,8 @@ export default function Services() {
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-light">
-            Services & <em className="text-brand-burgundy not-italic font-normal italic">Pricing</em>
+            Services &{' '}
+            <em className="text-brand-burgundy not-italic font-normal italic">Pricing</em>
           </h2>
         </FadeUp>
         <FadeUp delay={0.2}>
@@ -66,7 +78,8 @@ export default function Services() {
         </FadeUp>
         <FadeUp delay={0.25}>
           <p className="font-sans text-sm text-brand-gray max-w-md mx-auto mt-6 leading-relaxed">
-            Every service includes a complimentary hot towel and a finish of our house-made tonic.
+            Every appointment includes a consultation, neck cleanup, hot towel, and a finish with
+            our house tonic.
           </p>
         </FadeUp>
       </div>
@@ -76,8 +89,7 @@ export default function Services() {
           const Icon = service.Icon;
           return (
             <FadeUp key={service.name} delay={0.05 * i}>
-              <div className="bg-brand-dark p-10 flex flex-col gap-5 h-full border-t-2 border-brand-burgundy hover:border-brand-green hover:bg-brand-charcoal transition-all duration-500 group cursor-pointer relative overflow-hidden">
-                {/* Icon */}
+              <article className="bg-brand-dark p-10 flex flex-col gap-5 h-full border-t-2 border-brand-burgundy hover:border-brand-green hover:bg-brand-charcoal transition-all duration-500 group relative overflow-hidden">
                 <div className="text-brand-burgundy group-hover:text-brand-green transition-colors duration-300">
                   <Icon className="w-10 h-10" />
                 </div>
@@ -90,22 +102,21 @@ export default function Services() {
                   {service.desc}
                 </p>
 
-                <div className="flex items-end justify-between mt-2 pt-5 border-t border-brand-charcoal">
+                <div className="flex items-end justify-between gap-4 mt-2 pt-5 border-t border-brand-charcoal">
                   <span className="font-display text-4xl font-normal text-brand-green">
                     ${service.price}
                   </span>
                   <a
-                    href="#contact"
-                    className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-brown hover:text-brand-cream transition-colors duration-200 cursor-pointer group-hover:translate-x-1"
-                    style={{ transitionProperty: 'color, transform' }}
+                    href={bookingUrl}
+                    className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-brown hover:text-brand-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green transition-all duration-200 cursor-pointer group-hover:translate-x-1"
+                    aria-label={`Book ${service.name}`}
                   >
-                    Book →
+                    Book -&gt;
                   </a>
                 </div>
 
-                {/* Hover decorative line */}
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-green origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
+              </article>
             </FadeUp>
           );
         })}

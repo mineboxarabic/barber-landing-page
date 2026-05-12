@@ -28,25 +28,20 @@ export const FadeIcon = ({ className }: IconProps) => (
 export const RazorIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 32 32" className={className} fill="none" aria-hidden="true">
     <rect x="4" y="14" width="14" height="3" rx="0.5" stroke={stroke} strokeWidth={sw} />
-    <path d="M18 15.5L26 8M26 8l2 2M26 8l-2-2" stroke={stroke} strokeWidth={sw} strokeLinecap="round" />
+    <path
+      d="M18 15.5L26 8M26 8l2 2M26 8l-2-2"
+      stroke={stroke}
+      strokeWidth={sw}
+      strokeLinecap="round"
+    />
     <path d="M4 17v3" stroke={stroke} strokeWidth={sw} strokeLinecap="round" />
   </svg>
 );
 
 export const BeardIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 32 32" className={className} fill="none" aria-hidden="true">
-    <path
-      d="M10 10c0 4 2 8 6 8s6-4 6-8"
-      stroke={stroke}
-      strokeWidth={sw}
-      strokeLinecap="round"
-    />
-    <path
-      d="M8 14c0 8 4 14 8 14s8-6 8-14"
-      stroke={stroke}
-      strokeWidth={sw}
-      strokeLinecap="round"
-    />
+    <path d="M10 10c0 4 2 8 6 8s6-4 6-8" stroke={stroke} strokeWidth={sw} strokeLinecap="round" />
+    <path d="M8 14c0 8 4 14 8 14s8-6 8-14" stroke={stroke} strokeWidth={sw} strokeLinecap="round" />
     <circle cx="13" cy="13" r="0.8" fill={stroke} />
     <circle cx="19" cy="13" r="0.8" fill={stroke} />
   </svg>

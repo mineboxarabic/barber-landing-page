@@ -11,6 +11,8 @@ const labels = [
   'Shop atmosphere',
   'Hot towel shave',
   'Straight razor',
+  'Texture work',
+  'Final finish',
 ];
 
 const aspects = [
@@ -20,6 +22,8 @@ const aspects = [
   'aspect-[3/4]',
   'aspect-square',
   'aspect-square',
+  'aspect-[4/3]',
+  'aspect-[4/3]',
 ];
 
 function GalleryItem({
@@ -51,17 +55,9 @@ function GalleryItem({
         className="absolute inset-0 w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-[800ms] ease-out"
       />
 
-      {/* Dark vignette on bottom for label legibility */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity"
-        style={{
-          background:
-            'linear-gradient(180deg, transparent 50%, rgba(22,22,22,0.85) 100%)',
-        }}
-      />
+      <div className="absolute inset-0 pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity bg-gradient-to-b from-transparent via-transparent to-brand-dark/90" />
 
-      {/* Label */}
-      <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+      <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
         <span className="font-sans text-xs tracking-[0.3em] uppercase text-brand-cream">
           {label}
         </span>
@@ -70,7 +66,6 @@ function GalleryItem({
         </span>
       </div>
 
-      {/* Hover accent line */}
       <div className="absolute top-0 left-0 h-0.5 bg-brand-green origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 w-full" />
     </motion.div>
   );
@@ -79,11 +74,10 @@ function GalleryItem({
 export default function Gallery() {
   return (
     <SectionWrapper id="gallery" dark={false} className="py-28 md:py-36 relative">
-      {/* Section number */}
       <FadeUp className="absolute top-10 left-8 md:left-14">
         <div className="flex flex-col items-start gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-charcoal">
-            04 — Gallery
+            04 - Gallery
           </span>
           <div className="w-10 h-px bg-brand-charcoal/40" />
         </div>
@@ -103,7 +97,7 @@ export default function Gallery() {
         </FadeUp>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         {images.gallery.map((src, i) => (
           <GalleryItem
             key={src + i}

@@ -3,24 +3,26 @@ import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import { images } from 'assets/images';
 
+const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
+
 const barbers = [
   {
     name: 'Marcus Reid',
     title: 'Master Barber',
     years: '12 yrs',
-    bio: 'Specializes in classic gentleman cuts and straight-razor work.',
+    bio: 'Classic gentleman cuts, straight-razor work, and exacting scissor shape.',
   },
   {
     name: 'Jonah West',
     title: 'Senior Barber',
     years: '8 yrs',
-    bio: 'Fade specialist with a sharp eye for modern texture work.',
+    bio: 'Skin fades, textured crops, and clean modern finishes for busy schedules.',
   },
   {
     name: 'Leo Santos',
     title: 'Barber',
     years: '5 yrs',
-    bio: 'Beard sculptor and the resident expert on long hair styling.',
+    bio: 'Beard sculpting, longer styles, and easy maintenance advice between visits.',
   },
 ];
 
@@ -44,8 +46,7 @@ export default function Team() {
       <div className="grid sm:grid-cols-3 gap-8 md:gap-10">
         {barbers.map((barber, i) => (
           <FadeUp key={barber.name} delay={0.1 * i}>
-            <div className="group flex flex-col">
-              {/* Portrait */}
+            <article className="group flex flex-col">
               <div className="relative aspect-[3/4] overflow-hidden bg-brand-charcoal mb-6">
                 <img
                   src={images.team[i]}
@@ -54,30 +55,21 @@ export default function Team() {
                   className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
-                {/* Bottom gradient */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      'linear-gradient(180deg, transparent 50%, rgba(22,22,22,0.8) 100%)',
-                  }}
-                />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-brand-dark/80" />
 
-                {/* Years badge */}
                 <div className="absolute top-4 right-4 bg-brand-cream/95 backdrop-blur-sm px-3 py-1.5">
                   <span className="font-sans text-[10px] tracking-widest uppercase text-brand-charcoal">
                     {barber.years}
                   </span>
                 </div>
 
-                {/* Hover book button */}
                 <div className="absolute inset-x-0 bottom-0 h-14 flex items-center justify-center bg-brand-green translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                   <a
-                    href="#contact"
-                    className="font-sans text-xs tracking-[0.3em] uppercase text-white cursor-pointer"
+                    href={bookingUrl}
+                    className="font-sans text-xs tracking-[0.3em] uppercase text-white cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-light"
                     aria-label={`Book with ${barber.name}`}
                   >
-                    Book with {barber.name.split(' ')[0]} →
+                    Book with {barber.name.split(' ')[0]} -&gt;
                   </a>
                 </div>
               </div>
@@ -93,7 +85,7 @@ export default function Team() {
               <p className="font-sans text-sm text-brand-charcoal/70 leading-relaxed">
                 {barber.bio}
               </p>
-            </div>
+            </article>
           </FadeUp>
         ))}
       </div>

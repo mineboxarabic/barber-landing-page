@@ -6,43 +6,32 @@ import { images } from 'assets/images';
 export default function Story() {
   return (
     <SectionWrapper id="story" dark={false} className="py-28 md:py-36 relative">
-      {/* Section number */}
       <FadeUp className="absolute top-10 right-8 md:right-14">
         <div className="flex flex-col items-end gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-charcoal">
-            02 — Our Story
+            02 - Our Story
           </span>
           <div className="w-10 h-px bg-brand-charcoal/40" />
         </div>
       </FadeUp>
 
       <div className="grid md:grid-cols-5 gap-12 md:gap-20 items-center">
-        {/* Portrait image */}
         <FadeUp className="md:col-span-2">
           <div className="relative group">
             <div className="absolute -top-4 -left-4 w-full h-full border-2 border-brand-burgundy z-0" />
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-brand-charcoal z-10">
               <img
                 src={images.storyPortrait}
-                alt="Barber at work in the shop"
+                alt="Barber shaping a client haircut"
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 loading="lazy"
               />
-              {/* Subtle vignette */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    'linear-gradient(180deg, transparent 60%, rgba(22,22,22,0.4) 100%)',
-                }}
-              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-brand-dark/40" />
             </div>
-            {/* Brown corner accent */}
             <div className="absolute -bottom-3 -right-3 w-20 h-20 border-b-2 border-r-2 border-brand-brown z-20" />
           </div>
         </FadeUp>
 
-        {/* Text */}
         <div className="md:col-span-3 flex flex-col gap-6">
           <FadeUp delay={0.1}>
             <p className="font-script text-4xl text-brand-brown">About Us</p>
@@ -63,16 +52,16 @@ export default function Story() {
           <FadeUp delay={0.35}>
             <p className="font-sans text-base md:text-lg leading-relaxed text-brand-charcoal/80">
               Rooted in the timeless tradition of the neighbourhood barbershop, we believe a great
-              cut is more than a service — it's a ritual. Every client who sits in our chair leaves
-              with precision, confidence, and a story worth telling.
+              cut is more than a service. It is a ritual of precision, conversation, and leaving
+              sharper than you arrived.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.4}>
             <p className="font-sans text-base leading-relaxed text-brand-charcoal/70">
-              Since 2009, our barbers have honed their craft through thousands of cuts, shapes, and
-              straight-razor shaves — always with the same attention to detail that made us the
-              community's go-to chair.
+              Since 2009, our barbers have honed their craft through thousands of cuts, fades, and
+              straight-razor shaves with the same attention to detail that made us a downtown
+              regular for clients who care about the finish.
             </p>
           </FadeUp>
 
