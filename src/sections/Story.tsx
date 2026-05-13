@@ -1,15 +1,24 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import { images } from 'assets/images';
 
 export default function Story() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: '15+', label: t('story.statYears') },
+    { value: '2K+', label: t('story.statClients') },
+    { value: '4', label: t('story.statChairs') },
+  ];
+
   return (
     <SectionWrapper id="story" dark={false} className="py-28 md:py-36 relative">
       <FadeUp className="absolute top-10 right-8 md:right-14">
         <div className="flex flex-col items-end gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-charcoal">
-            02 - Our Story
+            {t('story.sectionNumber')}
           </span>
           <div className="w-10 h-px bg-brand-charcoal/40" />
         </div>
@@ -34,14 +43,16 @@ export default function Story() {
 
         <div className="md:col-span-3 flex flex-col gap-6">
           <FadeUp delay={0.1}>
-            <p className="font-script text-4xl text-brand-brown">About Us</p>
+            <p className="font-script text-4xl text-brand-brown">{t('story.aboutUs')}</p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-charcoal leading-[1.05]">
-              The Craft Behind
+              {t('story.heading1')}
               <br />
-              <em className="text-brand-burgundy not-italic font-normal italic">the Cut</em>
+              <em className="text-brand-burgundy not-italic font-normal italic">
+                {t('story.heading2')}
+              </em>
             </h2>
           </FadeUp>
 
@@ -51,27 +62,19 @@ export default function Story() {
 
           <FadeUp delay={0.35}>
             <p className="font-sans text-base md:text-lg leading-relaxed text-brand-charcoal/80">
-              Rooted in the timeless tradition of the neighbourhood barbershop, we believe a great
-              cut is more than a service. It is a ritual of precision, conversation, and leaving
-              sharper than you arrived.
+              {t('story.paragraph1')}
             </p>
           </FadeUp>
 
           <FadeUp delay={0.4}>
             <p className="font-sans text-base leading-relaxed text-brand-charcoal/70">
-              Since 2009, our barbers have honed their craft through thousands of cuts, fades, and
-              straight-razor shaves with the same attention to detail that made us a downtown
-              regular for clients who care about the finish.
+              {t('story.paragraph2')}
             </p>
           </FadeUp>
 
           <FadeUp delay={0.5}>
             <div className="grid grid-cols-3 gap-6 mt-6 pt-8 border-t border-brand-charcoal/15">
-              {[
-                { value: '15+', label: 'Years of craft' },
-                { value: '2K+', label: 'Happy clients' },
-                { value: '4', label: 'Master chairs' },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1.5">
                   <span className="font-display text-4xl md:text-5xl font-semibold text-brand-burgundy leading-none">
                     {stat.value}

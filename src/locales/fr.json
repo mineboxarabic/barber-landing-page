@@ -1,0 +1,165 @@
+{
+  "hero": {
+    "sectionNumber": "01 - Bienvenue",
+    "neighbourhood": "Votre Quartier",
+    "title": "The Chair",
+    "subtitle": "Barbier - Établi en 2009",
+    "bookCta": "Réserver une Coupe",
+    "viewServices": "Nos Services",
+    "scroll": "Défiler",
+    "bookAria": "Réserver un rendez-vous de coupe",
+    "viewServicesAria": "Voir nos services"
+  },
+  "nav": {
+    "logo": "The Chair",
+    "story": "Histoire",
+    "services": "Services",
+    "reviews": "Avis",
+    "gallery": "Galerie",
+    "team": "Équipe",
+    "contact": "Contact",
+    "bookNow": "Réserver",
+    "goToTop": "Aller en haut",
+    "closeMenu": "Fermer le menu de navigation",
+    "openMenu": "Ouvrir le menu de navigation",
+    "primaryNav": "Navigation principale",
+    "mobileNav": "Navigation mobile",
+    "bookAria": "Réserver un rendez-vous"
+  },
+  "story": {
+    "sectionNumber": "02 - Notre Histoire",
+    "aboutUs": "À Propos",
+    "heading1": "L'Art Derrière",
+    "heading2": "la Coupe",
+    "paragraph1": "Enracinés dans la tradition intemporelle du barbier de quartier, nous croyons qu'une grande coupe est plus qu'un service. C'est un rituel de précision, de conversation, et de repartir plus affûté que vous n'êtes arrivé.",
+    "paragraph2": "Depuis 2009, nos barbiers ont perfectionné leur art à travers des milliers de coupes, dégradés et rasages au fil droit avec la même attention aux détails qui a fait de nous un incontournable du centre-ville pour les clients qui se soucient de la finition.",
+    "statYears": "Années de métier",
+    "statClients": "Clients satisfaits",
+    "statChairs": "Fauteuils maîtres"
+  },
+  "services": {
+    "sectionNumber": "03 - Services",
+    "pretitle": "Ce Que Nous Offrons",
+    "heading1": "Services &",
+    "heading2": "Tarifs",
+    "disclaimer": "Chaque rendez-vous comprend une consultation, un nettoyage de la nuque, une serviette chaude et une finition avec notre tonique maison.",
+    "bookLabel": "Réserver",
+    "items": [
+      {
+        "name": "Coupe Classique",
+        "desc": "Consultation, coupe aux ciseaux ou à la tondeuse sur mesure, lavage et coiffage."
+      },
+      {
+        "name": "Dégradé Skin",
+        "desc": "Fusion serrée, ligne de cou nette, détail au rasoir et finition mate."
+      },
+      {
+        "name": "Rasage à la Serviette Chaude",
+        "desc": "Préparation à la serviette vapeur, rasage au fil droit, serviette froide et baume."
+      },
+      {
+        "name": "Taille de Barbe",
+        "desc": "Forme, lignes nettes, soin et détail des joues au rasoir."
+      },
+      {
+        "name": "Soin Complet",
+        "desc": "Coupe, taille de barbe, finition à la serviette chaude et consultation de coiffage."
+      },
+      {
+        "name": "Coupe Enfant",
+        "desc": "Coupes nettes et patientes pour les jeunes clients de 12 ans et moins."
+      }
+    ]
+  },
+  "reviews": {
+    "pretitle": "Réputation",
+    "heading1": "Reconnu pour",
+    "heading2": "un Travail Soigné",
+    "statGoogle": "Avis Google",
+    "statYears": "Ans au service de Toronto",
+    "items": [
+      {
+        "quote": "Le dégradé le plus net que j'aie eu au centre-ville. Le rendez-vous a commencé à l'heure et la finition était impeccable.",
+        "name": "Daniel P."
+      },
+      {
+        "quote": "Serviette chaude, ligne de barbe nette, sans précipitation. On se croirait dans un vrai salon de quartier avec des standards haut de gamme.",
+        "name": "Mateo R."
+      },
+      {
+        "quote": "Réservé avant un dîner client et sorti prêt pour les caméras. C'est mon fauteuil attitré maintenant.",
+        "name": "Chris L."
+      }
+    ]
+  },
+  "gallery": {
+    "sectionNumber": "04 - Galerie",
+    "pretitle": "Notre Travail",
+    "heading1": "La",
+    "heading2": "Galerie",
+    "viewLabel": "voir",
+    "labels": [
+      "Coupe classique",
+      "Détail dégradé",
+      "Taille de barbe",
+      "Ambiance du salon",
+      "Rasage serviette chaude",
+      "Rasoir droit",
+      "Travail de texture",
+      "Finition finale"
+    ]
+  },
+  "team": {
+    "pretitle": "L'Équipe",
+    "heading1": "Rencontrez",
+    "heading2": "Vos Barbiers",
+    "bookingPrefix": "Réserver avec",
+    "items": [
+      {
+        "name": "Marcus Reid",
+        "title": "Barbier Maître",
+        "years": "12 ans",
+        "bio": "Coupes classiques élégantes, travail au rasoir droit et forme aux ciseaux méticuleuse."
+      },
+      {
+        "name": "Jonah West",
+        "title": "Barbier Senior",
+        "years": "8 ans",
+        "bio": "Dégradés skin, coupes texturées et finitions modernes et propres pour horaires chargés."
+      },
+      {
+        "name": "Leo Santos",
+        "title": "Barbier",
+        "years": "5 ans",
+        "bio": "Sculpture de barbe, styles plus longs et conseils d'entretien faciles entre les visites."
+      }
+    ]
+  },
+  "contact": {
+    "sectionNumber": "06 - Visite",
+    "pretitle": "Entrez",
+    "heading1": "Trouvez-",
+    "heading2": "Nous",
+    "description": "Réservez à l'avance le fauteuil que vous souhaitez, ou passez entre les rendez-vous. Les clients sans rendez-vous sont les bienvenus lorsqu'un barbier est libre.",
+    "addressLabel": "Adresse",
+    "addressLine1": "72 Queen Street West",
+    "addressLine2": "Toronto, ON - M5H 2N2",
+    "phoneLabel": "Téléphone",
+    "phone": "(416) 537-2009",
+    "hoursLabel": "Horaires",
+    "hours": [
+      { "day": "Lundi", "time": "Fermé" },
+      { "day": "Mardi - Vendredi", "time": "9h00 - 19h00" },
+      { "day": "Samedi", "time": "8h00 - 18h00" },
+      { "day": "Dimanche", "time": "10h00 - 16h00" }
+    ],
+    "bookOnline": "Réserver en Ligne",
+    "getDirections": "Obtenir l'Itinéraire"
+  },
+  "footer": {
+    "title": "The Chair",
+    "subtitle": "Barbier - Établi en 2009",
+    "rights": "Tous droits réservés.",
+    "socialLabels": ["Instagram", "Facebook", "Google"]
+  }
+}

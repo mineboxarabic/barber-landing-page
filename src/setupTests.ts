@@ -3,6 +3,9 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import i18n from 'i18n/i18n';
+
+beforeEach(() => i18n.changeLanguage('en'));
 
 class MockIntersectionObserver implements IntersectionObserver {
   readonly root: Element | Document | null = null;

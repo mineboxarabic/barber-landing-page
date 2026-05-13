@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import {
@@ -12,52 +13,24 @@ import {
 
 const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
 
-const services = [
-  {
-    name: 'Classic Cut',
-    desc: 'Consultation, tailored scissor or clipper cut, wash, and style.',
-    price: 35,
-    Icon: ScissorsIcon,
-  },
-  {
-    name: 'Skin Fade',
-    desc: 'Tight blend, clean neckline, razor detail, and matte finish.',
-    price: 40,
-    Icon: FadeIcon,
-  },
-  {
-    name: 'Hot Towel Shave',
-    desc: 'Steam towel prep, straight-razor shave, cold towel, and balm.',
-    price: 45,
-    Icon: RazorIcon,
-  },
-  {
-    name: 'Beard Trim',
-    desc: 'Shape, line-up, condition, and razor-clean cheek detail.',
-    price: 25,
-    Icon: BeardIcon,
-  },
-  {
-    name: 'Full Groom',
-    desc: 'Cut, beard trim, hot towel finish, and styling consultation.',
-    price: 70,
-    Icon: ComboIcon,
-  },
-  {
-    name: "Kids' Cut",
-    desc: 'Patient, sharp cuts for younger clients ages 12 and under.',
-    price: 25,
-    Icon: KidIcon,
-  },
-];
+const iconMap = [ScissorsIcon, FadeIcon, RazorIcon, BeardIcon, ComboIcon, KidIcon] as const;
 
 export default function Services() {
+  const { t } = useTranslation();
+
+  const services = (
+    t('services.items', { returnObjects: true }) as {
+      name: string;
+      desc: string;
+    }[]
+  ).map((item, i) => ({ ...item, price: [35, 40, 45, 25, 70, 25][i], Icon: iconMap[i] }));
+
   return (
     <SectionWrapper id="services" dark={true} className="py-28 md:py-36 relative">
       <FadeUp className="absolute top-10 left-8 md:left-14">
         <div className="flex flex-col items-start gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray">
-            03 - Services
+            {t('services.sectionNumber')}
           </span>
           <div className="w-10 h-px bg-brand-gray/40" />
         </div>
@@ -65,12 +38,14 @@ export default function Services() {
 
       <div className="text-center mb-20">
         <FadeUp>
-          <p className="font-script text-3xl text-brand-brown mb-2">What We Offer</p>
+          <p className="font-script text-3xl text-brand-brown mb-2">{t('services.pretitle')}</p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-light">
-            Services &{' '}
-            <em className="text-brand-burgundy not-italic font-normal italic">Pricing</em>
+            {t('services.heading1')}{' '}
+            <em className="text-brand-burgundy not-italic font-normal italic">
+              {t('services.heading2')}
+            </em>
           </h2>
         </FadeUp>
         <FadeUp delay={0.2}>
@@ -78,8 +53,7 @@ export default function Services() {
         </FadeUp>
         <FadeUp delay={0.25}>
           <p className="font-sans text-sm text-brand-gray max-w-md mx-auto mt-6 leading-relaxed">
-            Every appointment includes a consultation, neck cleanup, hot towel, and a finish with
-            our house tonic.
+            {t('services.disclaimer')}
           </p>
         </FadeUp>
       </div>
@@ -109,9 +83,9 @@ export default function Services() {
                   <a
                     href={bookingUrl}
                     className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-brown hover:text-brand-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green transition-all duration-200 cursor-pointer group-hover:translate-x-1"
-                    aria-label={`Book ${service.name}`}
+                    aria-label={`${t('services.bookLabel')} ${service.name}`}
                   >
-                    Book -&gt;
+                    {t('services.bookLabel')} -&gt;
                   </a>
                 </div>
 

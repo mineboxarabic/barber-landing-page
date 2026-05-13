@@ -1,19 +1,9 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, useInView } from 'framer-motion';
 import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import { images } from 'assets/images';
-
-const labels = [
-  'Classic cut',
-  'Fade detail',
-  'Beard shaping',
-  'Shop atmosphere',
-  'Hot towel shave',
-  'Straight razor',
-  'Texture work',
-  'Final finish',
-];
 
 const aspects = [
   'aspect-square',
@@ -31,11 +21,13 @@ function GalleryItem({
   label,
   aspect,
   delay,
+  viewLabel,
 }: {
   src: string;
   label: string;
   aspect: string;
   delay: number;
+  viewLabel: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
@@ -62,7 +54,7 @@ function GalleryItem({
           {label}
         </span>
         <span className="font-display text-xs italic text-brand-cream/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          view
+          {viewLabel}
         </span>
       </div>
 
@@ -72,12 +64,16 @@ function GalleryItem({
 }
 
 export default function Gallery() {
+  const { t } = useTranslation();
+
+  const labels = t('gallery.labels', { returnObjects: true }) as string[];
+
   return (
     <SectionWrapper id="gallery" dark={false} className="py-28 md:py-36 relative">
       <FadeUp className="absolute top-10 left-8 md:left-14">
         <div className="flex flex-col items-start gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-charcoal">
-            04 - Gallery
+            {t('gallery.sectionNumber')}
           </span>
           <div className="w-10 h-px bg-brand-charcoal/40" />
         </div>
@@ -85,11 +81,14 @@ export default function Gallery() {
 
       <div className="text-center mb-16">
         <FadeUp>
-          <p className="font-script text-3xl text-brand-brown mb-2">Our Work</p>
+          <p className="font-script text-3xl text-brand-brown mb-2">{t('gallery.pretitle')}</p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-charcoal">
-            The <em className="text-brand-burgundy not-italic font-normal italic">Gallery</em>
+            {t('gallery.heading1')}{' '}
+            <em className="text-brand-burgundy not-italic font-normal italic">
+              {t('gallery.heading2')}
+            </em>
           </h2>
         </FadeUp>
         <FadeUp delay={0.2}>
@@ -105,6 +104,7 @@ export default function Gallery() {
             label={labels[i]}
             aspect={aspects[i]}
             delay={i * 0.08}
+            viewLabel={t('gallery.viewLabel')}
           />
         ))}
       </div>

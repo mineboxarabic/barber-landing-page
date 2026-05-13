@@ -1,41 +1,33 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import { images } from 'assets/images';
 
 const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
 
-const barbers = [
-  {
-    name: 'Marcus Reid',
-    title: 'Master Barber',
-    years: '12 yrs',
-    bio: 'Classic gentleman cuts, straight-razor work, and exacting scissor shape.',
-  },
-  {
-    name: 'Jonah West',
-    title: 'Senior Barber',
-    years: '8 yrs',
-    bio: 'Skin fades, textured crops, and clean modern finishes for busy schedules.',
-  },
-  {
-    name: 'Leo Santos',
-    title: 'Barber',
-    years: '5 yrs',
-    bio: 'Beard sculpting, longer styles, and easy maintenance advice between visits.',
-  },
-];
-
 export default function Team() {
+  const { t } = useTranslation();
+
+  const barbers = t('team.items', { returnObjects: true }) as {
+    name: string;
+    title: string;
+    years: string;
+    bio: string;
+  }[];
+
   return (
     <SectionWrapper id="team" dark={false} className="pt-0 pb-32 relative">
       <div className="text-center mb-16">
         <FadeUp>
-          <p className="font-script text-3xl text-brand-brown mb-2">The Crew</p>
+          <p className="font-script text-3xl text-brand-brown mb-2">{t('team.pretitle')}</p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-charcoal">
-            Meet Your <em className="text-brand-burgundy not-italic font-normal italic">Barbers</em>
+            {t('team.heading1')}{' '}
+            <em className="text-brand-burgundy not-italic font-normal italic">
+              {t('team.heading2')}
+            </em>
           </h2>
         </FadeUp>
         <FadeUp delay={0.2}>
@@ -67,9 +59,9 @@ export default function Team() {
                   <a
                     href={bookingUrl}
                     className="font-sans text-xs tracking-[0.3em] uppercase text-white cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-light"
-                    aria-label={`Book with ${barber.name}`}
+                    aria-label={`${t('team.bookingPrefix')} ${barber.name}`}
                   >
-                    Book with {barber.name.split(' ')[0]} -&gt;
+                    {t('team.bookingPrefix')} {barber.name.split(' ')[0]} -&gt;
                   </a>
                 </div>
               </div>

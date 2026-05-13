@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion, type Transition } from 'framer-motion';
 import Button from 'components/Button';
 import GrainOverlay from 'components/GrainOverlay';
@@ -7,6 +8,7 @@ import { images } from 'assets/images';
 const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
 
 export default function Hero() {
+  const { t } = useTranslation();
   const prefersReduced = useReducedMotion();
 
   const fadeIn = (delay: number) => ({
@@ -53,7 +55,7 @@ export default function Hero() {
         transition={{ delay: 1.3, duration: 0.8 }}
       >
         <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray">
-          01 - Welcome
+          {t('hero.sectionNumber')}
         </span>
         <div className="w-10 h-px bg-brand-gray/50" />
       </motion.div>
@@ -73,7 +75,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p {...fadeIn(0.4)} className="font-script text-4xl md:text-5xl text-brand-cream">
-          Your Neighbourhood
+          {t('hero.neighbourhood')}
         </motion.p>
 
         <motion.h1
@@ -88,7 +90,7 @@ export default function Hero() {
           }
           className="font-display text-7xl md:text-9xl font-bold text-brand-cream leading-none tracking-[0.02em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
         >
-          The Chair
+          {t('hero.title')}
         </motion.h1>
 
         <motion.div
@@ -102,15 +104,15 @@ export default function Hero() {
           {...fadeIn(1.2)}
           className="font-sans text-[11px] md:text-xs tracking-[0.4em] uppercase text-brand-gray mt-2"
         >
-          Barbershop - Established 2009
+          {t('hero.subtitle')}
         </motion.p>
 
         <motion.div {...fadeIn(1.45)} className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Button href={bookingUrl} aria-label="Book a haircut appointment">
-            Book a Cut
+          <Button href={bookingUrl} aria-label={t('hero.bookAria')}>
+            {t('hero.bookCta')}
           </Button>
-          <Button href="#services" variant="ghost" aria-label="View our services">
-            View Services
+          <Button href="#services" variant="ghost" aria-label={t('hero.viewServicesAria')}>
+            {t('hero.viewServices')}
           </Button>
         </motion.div>
       </div>
@@ -122,7 +124,7 @@ export default function Hero() {
         transition={{ delay: 2.2, duration: 0.6 } satisfies Transition}
       >
         <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray">
-          Scroll
+          {t('hero.scroll')}
         </span>
         <motion.div
           className="w-px h-12 bg-gradient-to-b from-brand-gray to-transparent origin-top"

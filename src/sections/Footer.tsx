@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
   { label: 'Instagram', href: 'https://instagram.com/thechairbarbershop' },
@@ -10,6 +11,10 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useTranslation();
+
+  const labels = t('footer.socialLabels', { returnObjects: true }) as string[];
+
   return (
     <footer className="bg-brand-footer py-16 px-6 text-center border-t border-brand-charcoal relative overflow-hidden">
       <div className="flex items-center justify-center gap-3 mb-6 opacity-60">
@@ -20,13 +25,13 @@ export default function Footer() {
         <span className="w-12 h-px bg-brand-brown" />
       </div>
 
-      <p className="font-script text-5xl text-brand-cream mb-2">The Chair</p>
+      <p className="font-script text-5xl text-brand-cream mb-2">{t('footer.title')}</p>
       <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray mb-8">
-        Barbershop - Est. 2009
+        {t('footer.subtitle')}
       </p>
 
       <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-10">
-        {socialLinks.map((social) => (
+        {socialLinks.map((social, i) => (
           <a
             key={social.label}
             href={social.href}
@@ -35,7 +40,7 @@ export default function Footer() {
             className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-brown hover:text-brand-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green transition-colors cursor-pointer"
             aria-label={`Visit our ${social.label} page`}
           >
-            {social.label}
+            {labels[i]}
           </a>
         ))}
       </div>
@@ -43,7 +48,7 @@ export default function Footer() {
       <div className="w-16 h-px bg-brand-charcoal mx-auto mb-6" />
 
       <p className="font-sans text-xs text-brand-gray">
-        &copy; {new Date().getFullYear()} The Chair Barbershop. All rights reserved.
+        &copy; {new Date().getFullYear()} {t('footer.title')}. {t('footer.rights')}
       </p>
     </footer>
   );

@@ -1,0 +1,159 @@
+{
+  "hero": {
+    "sectionNumber": "01 - Welcome",
+    "neighbourhood": "Your Neighbourhood",
+    "title": "The Chair",
+    "subtitle": "Barbershop - Established 2009",
+    "bookCta": "Book a Cut",
+    "viewServices": "View Services",
+    "scroll": "Scroll",
+    "bookAria": "Book a haircut appointment",
+    "viewServicesAria": "View our services"
+  },
+  "nav": {
+    "logo": "The Chair",
+    "story": "Story",
+    "services": "Services",
+    "reviews": "Reviews",
+    "gallery": "Gallery",
+    "team": "Team",
+    "contact": "Contact",
+    "bookNow": "Book Now",
+    "goToTop": "Go to top",
+    "closeMenu": "Close navigation menu",
+    "openMenu": "Open navigation menu",
+    "primaryNav": "Primary navigation",
+    "mobileNav": "Mobile navigation",
+    "bookAria": "Book an appointment"
+  },
+  "story": {
+    "sectionNumber": "02 - Our Story",
+    "aboutUs": "About Us",
+    "heading1": "The Craft Behind",
+    "heading2": "the Cut",
+    "paragraph1": "Rooted in the timeless tradition of the neighbourhood barbershop, we believe a great cut is more than a service. It is a ritual of precision, conversation, and leaving sharper than you arrived.",
+    "paragraph2": "Since 2009, our barbers have honed their craft through thousands of cuts, fades, and straight-razor shaves with the same attention to detail that made us a downtown regular for clients who care about the finish.",
+    "statYears": "Years of craft",
+    "statClients": "Happy clients",
+    "statChairs": "Master chairs"
+  },
+  "services": {
+    "sectionNumber": "03 - Services",
+    "pretitle": "What We Offer",
+    "heading1": "Services &",
+    "heading2": "Pricing",
+    "disclaimer": "Every appointment includes a consultation, neck cleanup, hot towel, and a finish with our house tonic.",
+    "bookLabel": "Book",
+    "items": [
+      {
+        "name": "Classic Cut",
+        "desc": "Consultation, tailored scissor or clipper cut, wash, and style."
+      },
+      {
+        "name": "Skin Fade",
+        "desc": "Tight blend, clean neckline, razor detail, and matte finish."
+      },
+      {
+        "name": "Hot Towel Shave",
+        "desc": "Steam towel prep, straight-razor shave, cold towel, and balm."
+      },
+      { "name": "Beard Trim", "desc": "Shape, line-up, condition, and razor-clean cheek detail." },
+      {
+        "name": "Full Groom",
+        "desc": "Cut, beard trim, hot towel finish, and styling consultation."
+      },
+      { "name": "Kids' Cut", "desc": "Patient, sharp cuts for younger clients ages 12 and under." }
+    ]
+  },
+  "reviews": {
+    "pretitle": "Reputation",
+    "heading1": "Trusted for",
+    "heading2": "Sharp Work",
+    "statGoogle": "Google rating",
+    "statYears": "Years serving Toronto",
+    "items": [
+      {
+        "quote": "The cleanest fade I have had downtown. The appointment started on time and the finish was flawless.",
+        "name": "Daniel P."
+      },
+      {
+        "quote": "Warm towel, sharp beard line, no rush. It feels like a proper neighborhood shop with premium standards.",
+        "name": "Mateo R."
+      },
+      {
+        "quote": "Booked before a client dinner and walked out camera-ready. This is my regular chair now.",
+        "name": "Chris L."
+      }
+    ]
+  },
+  "gallery": {
+    "sectionNumber": "04 - Gallery",
+    "pretitle": "Our Work",
+    "heading1": "The",
+    "heading2": "Gallery",
+    "viewLabel": "view",
+    "labels": [
+      "Classic cut",
+      "Fade detail",
+      "Beard shaping",
+      "Shop atmosphere",
+      "Hot towel shave",
+      "Straight razor",
+      "Texture work",
+      "Final finish"
+    ]
+  },
+  "team": {
+    "pretitle": "The Crew",
+    "heading1": "Meet Your",
+    "heading2": "Barbers",
+    "bookingPrefix": "Book with",
+    "items": [
+      {
+        "name": "Marcus Reid",
+        "title": "Master Barber",
+        "years": "12 yrs",
+        "bio": "Classic gentleman cuts, straight-razor work, and exacting scissor shape."
+      },
+      {
+        "name": "Jonah West",
+        "title": "Senior Barber",
+        "years": "8 yrs",
+        "bio": "Skin fades, textured crops, and clean modern finishes for busy schedules."
+      },
+      {
+        "name": "Leo Santos",
+        "title": "Barber",
+        "years": "5 yrs",
+        "bio": "Beard sculpting, longer styles, and easy maintenance advice between visits."
+      }
+    ]
+  },
+  "contact": {
+    "sectionNumber": "06 - Visit",
+    "pretitle": "Come In",
+    "heading1": "Find",
+    "heading2": "Us",
+    "description": "Book ahead for the chair you want, or stop by between appointments. Walk-ins welcome whenever a barber is open.",
+    "addressLabel": "Address",
+    "addressLine1": "72 Queen Street West",
+    "addressLine2": "Toronto, ON - M5H 2N2",
+    "phoneLabel": "Phone",
+    "phone": "(416) 537-2009",
+    "hoursLabel": "Hours",
+    "hours": [
+      { "day": "Monday", "time": "Closed" },
+      { "day": "Tuesday - Friday", "time": "9:00 am - 7:00 pm" },
+      { "day": "Saturday", "time": "8:00 am - 6:00 pm" },
+      { "day": "Sunday", "time": "10:00 am - 4:00 pm" }
+    ],
+    "bookOnline": "Book Online",
+    "getDirections": "Get Directions"
+  },
+  "footer": {
+    "title": "The Chair",
+    "subtitle": "Barbershop - Est. 2009",
+    "rights": "All rights reserved.",
+    "socialLabels": ["Instagram", "Facebook", "Google"]
+  }
+}

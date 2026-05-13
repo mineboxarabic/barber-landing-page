@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from 'components/Navbar';
+import HtmlUpdater from 'components/HtmlUpdater';
 import ScissorsDivider from 'components/ScissorsDivider';
 import ClipperDivider from 'components/ClipperDivider';
 import Hero from 'sections/Hero';
@@ -14,6 +15,7 @@ import Footer from 'sections/Footer';
 export default function App() {
   return (
     <main className="bg-brand-dark">
+      <HtmlUpdater />
       <Navbar />
 
       <Hero />
@@ -32,7 +34,7 @@ export default function App() {
       <Gallery />
       <Team />
 
-      <ClipperDivider revealColor="#161616" fromBg="#f4e4de" toBg="#161616" direction="rtl" />
+      {/* <ClipperDivider revealColor="#161616" fromBg="#f4e4de" toBg="#161616" direction="rtl" /> */}
 
       <Contact />
 

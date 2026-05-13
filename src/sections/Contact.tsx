@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionWrapper from 'components/SectionWrapper';
 import FadeUp from 'components/FadeUp';
 import Button from 'components/Button';
@@ -6,20 +7,20 @@ import Button from 'components/Button';
 const bookingUrl = 'https://book.squareup.com/appointments/the-chair-barbershop';
 const mapsUrl = 'https://maps.google.com/?q=The+Chair+Barbershop+72+Queen+Street+West+Toronto';
 
-const hours = [
-  { day: 'Monday', time: 'Closed' },
-  { day: 'Tuesday - Friday', time: '9:00 am - 7:00 pm' },
-  { day: 'Saturday', time: '8:00 am - 6:00 pm' },
-  { day: 'Sunday', time: '10:00 am - 4:00 pm' },
-];
-
 export default function Contact() {
+  const { t } = useTranslation();
+
+  const hours = t('contact.hours', { returnObjects: true }) as {
+    day: string;
+    time: string;
+  }[];
+
   return (
     <SectionWrapper id="contact" dark={true} className="py-28 md:py-36 relative">
       <FadeUp className="absolute top-10 right-8 md:right-14">
         <div className="flex flex-col items-end gap-2 opacity-60">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gray">
-            06 - Visit
+            {t('contact.sectionNumber')}
           </span>
           <div className="w-10 h-px bg-brand-gray/40" />
         </div>
@@ -28,11 +29,14 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
         <div className="flex flex-col gap-8">
           <FadeUp>
-            <p className="font-script text-3xl text-brand-brown">Come In</p>
+            <p className="font-script text-3xl text-brand-brown">{t('contact.pretitle')}</p>
           </FadeUp>
           <FadeUp delay={0.1}>
             <h2 className="font-display text-4xl md:text-6xl font-semibold text-brand-light leading-tight">
-              Find <em className="text-brand-burgundy not-italic font-normal italic">Us</em>
+              {t('contact.heading1')}{' '}
+              <em className="text-brand-burgundy not-italic font-normal italic">
+                {t('contact.heading2')}
+              </em>
             </h2>
           </FadeUp>
           <FadeUp delay={0.15}>
@@ -41,20 +45,19 @@ export default function Contact() {
 
           <FadeUp delay={0.18}>
             <p className="font-sans text-sm md:text-base leading-relaxed text-brand-gray max-w-md">
-              Book ahead for the chair you want, or stop by between appointments. Walk-ins welcome
-              whenever a barber is open.
+              {t('contact.description')}
             </p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <div className="flex flex-col gap-1">
               <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-gray">
-                Address
+                {t('contact.addressLabel')}
               </p>
               <p className="font-sans text-base md:text-lg text-brand-light mt-2 leading-relaxed">
-                72 Queen Street West
+                {t('contact.addressLine1')}
                 <br />
-                Toronto, ON - M5H 2N2
+                {t('contact.addressLine2')}
               </p>
             </div>
           </FadeUp>
@@ -62,13 +65,13 @@ export default function Contact() {
           <FadeUp delay={0.25}>
             <div className="flex flex-col gap-1">
               <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-gray">
-                Phone
+                {t('contact.phoneLabel')}
               </p>
               <a
                 href="tel:+14165372009"
                 className="font-sans text-base md:text-lg text-brand-brown hover:text-brand-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green transition-colors cursor-pointer mt-2"
               >
-                (416) 537-2009
+                {t('contact.phone')}
               </a>
             </div>
           </FadeUp>
@@ -76,7 +79,7 @@ export default function Contact() {
           <FadeUp delay={0.3}>
             <div className="flex flex-col gap-3">
               <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-brand-gray">
-                Hours
+                {t('contact.hoursLabel')}
               </p>
               <table className="w-full mt-2">
                 <tbody>
@@ -85,7 +88,9 @@ export default function Contact() {
                       <td className="font-sans text-sm text-brand-gray py-3 pr-6">{row.day}</td>
                       <td
                         className={`font-sans text-sm py-3 text-right ${
-                          row.time === 'Closed' ? 'text-brand-burgundy' : 'text-brand-light'
+                          row.time === 'Closed' || row.time === 'Fermé'
+                            ? 'text-brand-burgundy'
+                            : 'text-brand-light'
                         }`}
                       >
                         {row.time}
@@ -99,11 +104,11 @@ export default function Contact() {
 
           <FadeUp delay={0.4}>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Button href={bookingUrl} aria-label="Book an appointment online">
-                Book Online
+              <Button href={bookingUrl} aria-label={t('contact.bookOnline')}>
+                {t('contact.bookOnline')}
               </Button>
-              <Button href={mapsUrl} variant="ghost" aria-label="Open in Google Maps">
-                Get Directions
+              <Button href={mapsUrl} variant="ghost" aria-label={t('contact.getDirections')}>
+                {t('contact.getDirections')}
               </Button>
             </div>
           </FadeUp>
